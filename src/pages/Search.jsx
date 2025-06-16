@@ -39,8 +39,8 @@ function Search() {
   return (
     <div>
       <div className="flex flex-col items-center mx-auto p-4">
-        <h2 className="text-2xl font-bold mb-4">Welcome to Reealsearch</h2>
-        <p className="text-gray-700">Discover the latest movies.</p>
+        <h2 className="text-2xl font-bold mb-4">Welcome to MovieHub</h2>
+        <p className="text-gray-700">Discover your Desired  movies here...</p>
 
         <form
           onSubmit={formik.handleSubmit}

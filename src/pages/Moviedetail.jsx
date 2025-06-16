@@ -4,6 +4,8 @@ import { useState,useEffect } from "react";
 import { useParams } from "react-router";
 import Recomendedmovies from "../components/Recomendedmovies";
 import { Link } from "react-router";
+import Add_to_watch from "../components/Add_to_watch";
+
 
 function Moviedetail() {
   const [movie, SetMovie] = useState([]);
@@ -53,9 +55,8 @@ function Moviedetail() {
           </div>
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-              ➕ Add to Watchlist
-            </button>
+            <Add_to_watch movie = {movie}></Add_to_watch>
+            
             <Link to={`/Trailer/${movie.id}`}>
             <button className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
               🎬 Watch Trailer
