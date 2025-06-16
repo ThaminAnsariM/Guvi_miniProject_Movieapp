@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import Recomendedmovies from "../components/Recomendedmovies";
 import { Link } from "react-router";
 import Add_to_watch from "../components/Add_to_watch";
+import Cast from "../components/Cast";
 
 
 function Moviedetail() {
@@ -32,10 +33,10 @@ function Moviedetail() {
   },[params.id]);
 
   return (
-    <div className="sticky w-full min-h-screen  flex flex-col justify-center items-center px-4 py-10">
+    <div className=" w-full min-h-screen  flex flex-col justify-center items-center px-4 py-5">
       <div className="  bg-white shadow-lg rounded-xl flex flex-col md:flex-row w-full max-w-5xl overflow-hidden">
         {/* Poster */}
-        <div className="w-full md:w-[300px] h-auto bg-gray-100">
+        <div className="w-full md:w-[450px] h-auto bg-gray-100">
           <img
             src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
             alt="Poster"
@@ -62,16 +63,19 @@ function Moviedetail() {
               🎬 Watch Trailer
             </button>
             </Link>
-          </div>
 
-          {/* Cast Placeholder */}
-          <div className="mt-6">
-            <h2 className="text-lg font-semibold text-gray-800">Cast</h2>
-            <p className="text-gray-600 text-sm">Coming soon...</p>
+            {/* Cast Placeholder */}
+          
+            
+            <Cast id={movie.id}></Cast>
+          
+
           </div>
         </div>
+         
       </div>
-
+      
+          
       {/* recomendedsection */}
       <Recomendedmovies id={movie.id} ></Recomendedmovies>
     </div>
